@@ -1,0 +1,358 @@
+PK     File Explorer MIT App Inventor Project
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <name>FileExplorer</name>
+  <description>Mobil qurilma xotirasini tahlil qiluvchi ilova</description>
+  
+  <!-- Designer Components -->
+  <components>
+    <!-- Screen1 -->
+    <component type="Screen" name="Screen1">
+      <property name="Title">File Explorer</property>
+      <property name="BackgroundColor">#000000</property>
+      <property name="Width">Fill parent</property>
+      <property name="Height">Fill parent</property>
+      
+      <!-- TopBar - HorizontalArrangement -->
+      <component type="HorizontalArrangement" name="TopBar">
+        <property name="Width">Fill parent</property>
+        <property name="Height">60</property>
+        <property name="BackgroundColor">#1a1a1a</property>
+        <property name="AlignHorizontal">Left</property>
+        
+        <!-- SearchBox -->
+        <component type="TextBox" name="SearchBox">
+          <property name="Width">80%</property>
+          <property name="Height">50</property>
+          <property name="Hint">Qidirish...</property>
+          <property name="BackgroundColor">#2a2a2a</property>
+          <property name="TextColor">#FFFFFF</property>
+        </component>
+        
+        <!-- MenuButton -->
+        <component type="Button" name="MenuButton">
+          <property name="Width">20%</property>
+          <property name="Height">50</property>
+          <property name="Text">⋮</property>
+          <property name="BackgroundColor">#1a1a1a</property>
+          <property name="TextColor">#FFFFFF</property>
+          <property name="FontBold">true</property>
+          <property name="FontSize">24</property>
+        </component>
+      </component>
+      
+      <!-- MainScroll - ScrollView -->
+      <component type="ScrollView" name="MainScroll">
+        <property name="Width">Fill parent</property>
+        <property name="Height">Fill parent</property>
+        
+        <!-- VerticalArrangement -->
+        <component type="VerticalArrangement" name="MainVertical">
+          <property name="Width">Fill parent</property>
+          <property name="Height">Fill parent</property>
+          <property name="BackgroundColor">#000000</property>
+          
+          <!-- Categories Section -->
+          <component type="Label" name="CategoriesLabel">
+            <property name="Text">Turli Fayllar</property>
+            <property name="TextSize">18</property>
+            <property name="TextColor">#FFFFFF</property>
+            <property name="Width">Fill parent</property>
+            <property name="Height">Auto</property>
+            <property name="FontBold">true</property>
+          </component>
+          
+          <!-- Categories Row 1 -->
+          <component type="HorizontalArrangement" name="CategoriesRow1">
+            <property name="Width">Fill parent</property>
+            <property name="Height">100</property>
+            
+            <component type="Button" name="PicturesButton">
+              <property name="Width">25%</property>
+              <property name="Height">100</property>
+              <property name="Text">📷&#10;Tasvirlar</property>
+              <property name="BackgroundColor">#FF6B6B</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+            
+            <component type="Button" name="VideosButton">
+              <property name="Width">25%</property>
+              <property name="Height">100</property>
+              <property name="Text">🎬&#10;Videolar</property>
+              <property name="BackgroundColor">#4ECDC4</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+            
+            <component type="Button" name="AudioButton">
+              <property name="Width">25%</property>
+              <property name="Height">100</property>
+              <property name="Text">🎵&#10;Audio</property>
+              <property name="BackgroundColor">#95E1D3</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+            
+            <component type="Button" name="DocumentsButton">
+              <property name="Width">25%</property>
+              <property name="Height">100</property>
+              <property name="Text">📄&#10;Hujjatlar</property>
+              <property name="BackgroundColor">#F7DC6F</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+          </component>
+          
+          <!-- Categories Row 2 -->
+          <component type="HorizontalArrangement" name="CategoriesRow2">
+            <property name="Width">Fill parent</property>
+            <property name="Height">100</property>
+            
+            <component type="Button" name="DownloadsButton">
+              <property name="Width">50%</property>
+              <property name="Height">100</property>
+              <property name="Text">⬇️&#10;Yuklab olinganlar</property>
+              <property name="BackgroundColor">#BB8FCE</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+            
+            <component type="Button" name="APKButton">
+              <property name="Width">50%</property>
+              <property name="Height">100</property>
+              <property name="Text">📦&#10;APK Fayllar</property>
+              <property name="BackgroundColor">#85C1E2</property>
+              <property name="TextColor">#FFFFFF</property>
+              <property name="FontBold">true</property>
+            </component>
+          </component>
+          
+          <!-- Recent Files Section -->
+          <component type="Label" name="RecentFilesLabel">
+            <property name="Text">Oxirgi Fayllar</property>
+            <property name="TextSize">18</property>
+            <property name="TextColor">#FFFFFF</property>
+            <property name="Width">Fill parent</property>
+            <property name="Height">Auto</property>
+            <property name="FontBold">true</property>
+          </component>
+          
+          <!-- Recent Files Scroll -->
+          <component type="HorizontalScrollArrangement" name="RecentFilesScroll">
+            <property name="Width">Fill parent</property>
+            <property name="Height">150</property>
+            
+            <component type="Image" name="RecentFile1">
+              <property name="Width">120</property>
+              <property name="Height">150</property>
+              <property name="Picture">file:///android_asset/default.png</property>
+            </component>
+            
+            <component type="Image" name="RecentFile2">
+              <property name="Width">120</property>
+              <property name="Height">150</property>
+              <property name="Picture">file:///android_asset/default.png</property>
+            </component>
+            
+            <component type="Image" name="RecentFile3">
+              <property name="Width">120</property>
+              <property name="Height">150</property>
+              <property name="Picture">file:///android_asset/default.png</property>
+            </component>
+            
+            <component type="Image" name="RecentFile4">
+              <property name="Width">120</property>
+              <property name="Height">150</property>
+              <property name="Picture">file:///android_asset/default.png</property>
+            </component>
+          </component>
+          
+          <!-- Storage Section -->
+          <component type="Label" name="StorageLabel">
+            <property name="Text">Xotira</property>
+            <property name="TextSize">18</property>
+            <property name="TextColor">#FFFFFF</property>
+            <property name="Width">Fill parent</property>
+            <property name="Height">Auto</property>
+            <property name="FontBold">true</property>
+          </component>
+          
+          <!-- Internal Storage -->
+          <component type="HorizontalArrangement" name="InternalStorageItem">
+            <property name="Width">Fill parent</property>
+            <property name="Height">80</property>
+            <property name="BackgroundColor">#2a2a2a</property>
+            
+            <component type="Label" name="InternalStorageIcon">
+              <property name="Text">📱</property>
+              <property name="TextSize">32</property>
+              <property name="Width">Auto</property>
+              <property name="Height">80</property>
+            </component>
+            
+            <component type="VerticalArrangement" name="InternalStorageInfo">
+              <property name="Width">70%</property>
+              <property name="Height">80</property>
+              
+              <component type="Label" name="InternalStorageLabel">
+                <property name="Text">Ichki xotira</property>
+                <property name="TextSize">16</property>
+                <property name="TextColor">#FFFFFF</property>
+                <property name="FontBold">true</property>
+              </component>
+              
+              <component type="ProgressBar" name="InternalStorageProgress">
+                <property name="Width">Fill parent</property>
+                <property name="Height">8</property>
+              </component>
+              
+              <component type="Label" name="InternalStorageInfo">
+                <property name="Text">73.0 GB / 256 GB</property>
+                <property name="TextSize">12</property>
+                <property name="TextColor">#AAAAAA</property>
+              </component>
+            </component>
+          </component>
+          
+          <!-- SD Card -->
+          <component type="HorizontalArrangement" name="SDCardItem">
+            <property name="Width">Fill parent</property>
+            <property name="Height">80</property>
+            <property name="BackgroundColor">#2a2a2a</property>
+            
+            <component type="Label" name="SDCardIcon">
+              <property name="Text">💾</property>
+              <property name="TextSize">32</property>
+              <property name="Width">Auto</property>
+              <property name="Height">80</property>
+            </component>
+            
+            <component type="Label" name="SDCardInfo">
+              <property name="Text">SD-karta&#10;Kiritilmagan</property>
+              <property name="TextSize">14</property>
+              <property name="TextColor">#AAAAAA</property>
+              <property name="Width">70%</property>
+              <property name="Height">80</property>
+            </component>
+          </component>
+          
+          <!-- OneDrive -->
+          <component type="HorizontalArrangement" name="OneDriveItem">
+            <property name="Width">Fill parent</property>
+            <property name="Height">80</property>
+            <property name="BackgroundColor">#2a2a2a</property>
+            
+            <component type="Label" name="OneDriveIcon">
+              <property name="Text">☁️</property>
+              <property name="TextSize">32</property>
+              <property name="Width">Auto</property>
+              <property name="Height">80</property>
+            </component>
+            
+            <component type="Label" name="OneDriveInfo">
+              <property name="Text">OneDrive&#10;Kiritilmagan</property>
+              <property name="TextSize">14</property>
+              <property name="TextColor">#AAAAAA</property>
+              <property name="Width">70%</property>
+              <property name="Height">80</property>
+            </component>
+          </component>
+          
+          <!-- Google Drive -->
+          <component type="HorizontalArrangement" name="GoogleDriveItem">
+            <property name="Width">Fill parent</property>
+            <property name="Height">80</property>
+            <property name="BackgroundColor">#2a2a2a</property>
+            
+            <component type="Label" name="GoogleDriveIcon">
+              <property name="Text">🔷</property>
+              <property name="TextSize">32</property>
+              <property name="Width">Auto</property>
+              <property name="Height">80</property>
+            </component>
+            
+            <component type="Label" name="GoogleDriveInfo">
+              <property name="Text">Google Drive&#10;Kiritilmagan</property>
+              <property name="TextSize">14</property>
+              <property name="TextColor">#AAAAAA</property>
+              <property name="Width">70%</property>
+              <property name="Height">80</property>
+            </component>
+          </component>
+          
+          <!-- Network Storage -->
+          <component type="HorizontalArrangement" name="NetworkItem">
+            <property name="Width">Fill parent</property>
+            <property name="Height">80</property>
+            <property name="BackgroundColor">#2a2a2a</property>
+            
+            <component type="Label" name="NetworkIcon">
+              <property name="Text">🌐</property>
+              <property name="TextSize">32</property>
+              <property name="Width">Auto</property>
+              <property name="Height">80</property>
+            </component>
+            
+            <component type="Label" name="NetworkInfo">
+              <property name="Text">Tarmog qotirasi&#10;Ulanishi yoq</property>
+              <property name="TextSize">14</property>
+              <property name="TextColor">#AAAAAA</property>
+              <property name="Width">70%</property>
+              <property name="Height">80</property>
+            </component>
+          </component>
+        </component>
+      </component>
+    </component>
+  </components>
+  
+  <!-- Non-Visible Components -->
+  <non-visible-components>
+    <component type="ActivityStarter" name="ActivityStarter1"/>
+    <component type="Notifier" name="Notifier1"/>
+    <component type="TaifunFile" name="TaifunFile1"/>
+  </non-visible-components>
+  
+  <!-- Events & Procedures (Blocks will be added in Blocks view) -->
+  <events>
+    <event name="Screen1.Initialize">
+      <!-- Load storage info -->
+      <!-- Load recent files -->
+      <!-- Update UI -->
+    </event>
+    
+    <event name="PicturesButton.Click">
+      <!-- List pictures -->
+    </event>
+    
+    <event name="VideosButton.Click">
+      <!-- List videos -->
+    </event>
+    
+    <event name="AudioButton.Click">
+      <!-- List audio files -->
+    </event>
+    
+    <event name="DocumentsButton.Click">
+      <!-- List documents -->
+    </event>
+    
+    <event name="DownloadsButton.Click">
+      <!-- List downloads -->
+    </event>
+    
+    <event name="APKButton.Click">
+      <!-- List APK files -->
+    </event>
+  </events>
+  
+  <!-- Metadata -->
+  <metadata>
+    <author>Bloubit</author>
+    <version>1.0</version>
+    <created>2026-05-08</created>
+    <targetSdk>30</targetSdk>
+    <minSdk>19</minSdk>
+  </metadata>
+</project>
